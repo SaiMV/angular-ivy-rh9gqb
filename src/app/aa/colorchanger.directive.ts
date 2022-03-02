@@ -10,7 +10,7 @@ import {
   selector: '[appColorchanger]',
 })
 export class ColorchangerDirective {
-  // @Input() var1 = '';
+  @Input() var1 = '';
   // @HostBinding('style.color') color;
   @HostBinding('style.backgroundColor') bgColor;
 

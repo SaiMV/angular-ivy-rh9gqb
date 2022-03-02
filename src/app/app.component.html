@@ -1,6 +1,7 @@
 <hello>
   <div *ngFor="let item of arrayList">
-    <p appColorchanger *ngIf="item % 2 != 0">
+    <!-- passing values to directive -->
+    <p appColorchanger [var1]="'asas'" *ngIf="item % 2 != 0">
       Start editing to see some magic happen :) {{ item }}
     </p>
   </div>
