@@ -128,7 +128,7 @@ class ConnectionProvider {
     return this.connectWifi;
   }
 
-  // rest are private
+  // rest are private class / variables
 }
 
 // encapsulation:
