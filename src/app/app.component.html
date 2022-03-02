@@ -1,0 +1,17 @@
+<hello>
+  <div *ngFor="let item of arrayList">
+    <p appColorchanger *ngIf="item % 2 != 0">
+      Start editing to see some magic happen :) {{ item }}
+    </p>
+  </div>
+</hello>
+
+<ng-container *ngFor="let item of arrayList">
+  <p appColorchanger *ngIf="item % 2 != 0">
+    Start editing to see some magic happen :) {{ item }}
+  </p>
+</ng-container>
+
+{{ instService.data }}
+
+<button (click)="sentSomeData()">Click2</button>
