@@ -126,7 +126,7 @@ class ConnectionProvider {
   private ConnectionProvider() {}
 
   static getInstance() {
-    this.getInstances() ;// aceesing static class insid same class
+    this.getInstances(); // aceesing static class inside same class
     return this.instConnectionProvider;
   }
 
