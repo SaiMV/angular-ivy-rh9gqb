@@ -27,7 +27,7 @@ export class HelloComponent {
     let connectWifi2: CreateWifiConncetion = new CreateWifiConncetion();
     let connectBluetooth2: CreateBluetoothConncetion =
       new CreateBluetoothConncetion();
-    ConnectionProvider.instConnectionProvider;
+    ConnectionProvider.getInstance();
     // check the differences
   }
 
@@ -126,9 +126,13 @@ class ConnectionProvider {
   private ConnectionProvider() {}
 
   static getInstance() {
+    this.getInstances() ;// aceesing static class insid same class
     return this.instConnectionProvider;
   }
 
+  static getInstances() {
+    return this.instConnectionProvider;
+  }
   private connectWifi: Connection = new CreateWifiConncetion();
   private connectBluetooth: Connection = new CreateBluetoothConncetion();
 
