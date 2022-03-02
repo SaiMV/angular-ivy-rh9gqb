@@ -129,7 +129,7 @@ class ConnectionProvider {
     if (this.instConnectionProvider === null) {
       this.instConnectionProvider = new ConnectionProvider();
     }
-    this.getInstances(); // aceesing static class inside same class
+    // this.getInstances(); // aceesing static class inside same class
     return this.instConnectionProvider;
   }
 
