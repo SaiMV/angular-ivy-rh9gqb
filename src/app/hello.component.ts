@@ -29,14 +29,15 @@ export class HelloComponent {
       new CreateBluetoothConncetion();
     ConnectionProvider.getInstance();
     // check the differences
-  }
-
-  sentSomeData2(data) {
-    this.inst.sentData('somedata');
     this.inst.getService().subscribe((data) => {
       console.log(data);
       //logic
     });
+  }
+
+  sentSomeData2(data) {
+    this.inst.sentData(data);
+   
   }
 }
 
