@@ -9,18 +9,17 @@ import { DataSharing } from './aa/DataSharing.service';
 export class AppComponent {
   name = 'Angular ' + VERSION.major;
   arrayList = [1, 2, 3, 4];
-  instService:any;
+  instService: any;
 
   constructor(private inst: DataSharing) {
     this.instService = inst;
-    inst.getService().subscribe(data=>{
-      console.log(data)
+    inst.getService().subscribe((data) => {
+      console.log('appcomponent - ' + data);
       //logic
     });
   }
 
-  sentSomeData(){
-    this.inst.sentData("somedata");
+  sentSomeData() {
+    this.inst.sentData('somedata from app component');
   }
-
 }

@@ -30,14 +30,13 @@ export class HelloComponent {
     ConnectionProvider.getInstance();
     // check the differences
     this.inst.getService().subscribe((data) => {
-      console.log(data);
+      console.log('hello - ' + data);
       //logic
     });
   }
 
   sentSomeData2(data) {
     this.inst.sentData(data);
-   
   }
 }
 

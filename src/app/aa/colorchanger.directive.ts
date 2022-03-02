@@ -39,13 +39,13 @@ export class ColorchangerDirective {
 
   @HostListener('mouseover')
   changeBackgound() {
-    console.log('red');
+    // console.log('red');
     this.bgColor = 'yellow';
   }
 
   @HostListener('mouseout')
   changeBackgound2() {
-    console.log('red');
+    // console.log('red');
     this.bgColor = 'green';
   }
 }
