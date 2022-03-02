@@ -27,7 +27,7 @@ export class HelloComponent {
     let connectWifi2: CreateWifiConncetion = new CreateWifiConncetion();
     let connectBluetooth2: CreateBluetoothConncetion =
       new CreateBluetoothConncetion();
-
+    ConnectionProvider.instConnectionProvider;
     // check the differences
   }
 
@@ -112,7 +112,23 @@ class CreateBluetoothConncetion implements Connection {
   someotherMethods() {}
 }
 
+class AppConstants {
+  static readonly variabl1 = 'var1';
+  static readonly variabl2 = 'var2';
+  static readonly variabl3 = 'var3';
+}
+
 class ConnectionProvider {
+  x = AppConstants.variabl1;
+
+  private static instConnectionProvider = new ConnectionProvider();
+
+  private ConnectionProvider() {}
+
+  static getInstance() {
+    return this.instConnectionProvider;
+  }
+
   private connectWifi: Connection = new CreateWifiConncetion();
   private connectBluetooth: Connection = new CreateBluetoothConncetion();
 
@@ -140,3 +156,7 @@ class ConnectionProvider {
 // Design patterns
 // Singleton
 // Factory
+
+//Abstraction
+//Abstract class extending abstract class - encapuslaton/data hiding
+//interface -
