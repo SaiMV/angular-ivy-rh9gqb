@@ -1,3 +1,4 @@
+import { FactoryTarget } from '@angular/compiler/src/compiler';
 import { Component, Input } from '@angular/core';
 import { Subject } from 'rxjs';
 import { DataSharing } from './aa/DataSharing.service';
@@ -11,6 +12,23 @@ export class HelloComponent {
   @Input() arrayData = [];
   constructor(private inst: DataSharing) {
     this.inst.data = 'ss';
+    let calc1: Calc = new ArithmeticOperations();
+    let calc2: Calc = new ArithmeticOperations2();
+
+    let abstract: A = new B();
+    let abstract2: B = new B();
+
+    console.log(calc1.addition(10, 20));
+    console.log(calc2.addition(10, 20));
+
+    let connectWifi: Connection = new CreateWifiConncetion();
+    let connectBluetooth: Connection = new CreateBluetoothConncetion();
+
+    let connectWifi2: CreateWifiConncetion = new CreateWifiConncetion();
+    let connectBluetooth2: CreateBluetoothConncetion =
+      new CreateBluetoothConncetion();
+
+    // check the differences
   }
 
   sentSomeData2(data) {
@@ -21,3 +39,85 @@ export class HelloComponent {
     });
   }
 }
+
+interface Calc {
+  addition(a, b);
+  subtraction(a, b);
+}
+
+abstract class A {
+  abstract multiplication(a, b);
+  Addition(a, b) {
+    return a + b;
+  }
+}
+
+class B extends A {
+  substraction(a, b) {
+    return a - b;
+  }
+  multiplication(a, b) {
+    return a * b;
+  }
+}
+
+//Abstract
+
+class ArithmeticOperations implements Calc {
+  addition(a: any, b: any) {
+    // this.abstract2.substraction()
+    //this.abstract.substraction();
+    return 1 + a + b;
+  }
+
+  subtraction(a: any, b: any) {
+    return 1 + (a - b);
+  }
+}
+
+class ArithmeticOperations2 implements Calc {
+  addition(a: any, b: any) {
+    return 1 - a + b;
+  }
+
+  subtraction(a: any, b: any) {
+    return 1 - a - b;
+  }
+}
+
+interface Connection {
+  connect();
+  disconnect();
+}
+
+class CreateWifiConncetion implements Connection {
+  connect() {
+    //connectfor wifi protocol
+  }
+  disconnect() {
+    //disconnect
+  }
+  Abc() {}
+}
+
+class CreateBluetoothConncetion implements Connection {
+  connect() {
+    //connectfor wifi protocol
+  }
+
+  disconnect() {
+    //disconnect
+  }
+
+  someotherMethods() {}
+}
+
+// encapsulation:
+// with interace abstract class or private declaraitions for functions and variables
+
+// What is encapsulation and abstraction
+// what is the difference between interface and abstract class
+
+// Design patterns
+// Singleton
+// Factory
