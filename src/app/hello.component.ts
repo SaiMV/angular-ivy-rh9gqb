@@ -112,6 +112,25 @@ class CreateBluetoothConncetion implements Connection {
   someotherMethods() {}
 }
 
+class ConnectionProvider {
+  private connectWifi: Connection = new CreateWifiConncetion();
+  private connectBluetooth: Connection = new CreateBluetoothConncetion();
+
+  connectWifi2: CreateWifiConncetion = new CreateWifiConncetion();
+  connectBluetooth2: CreateBluetoothConncetion =
+    new CreateBluetoothConncetion();
+
+  public getWifi() {
+    return this.connectWifi;
+  }
+
+  public getWifi2() {
+    return this.connectWifi;
+  }
+
+  // rest are private
+}
+
 // encapsulation:
 // with interace abstract class or private declaraitions for functions and variables
 
