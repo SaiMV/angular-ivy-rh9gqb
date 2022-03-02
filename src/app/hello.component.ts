@@ -119,18 +119,22 @@ class AppConstants {
 }
 
 class ConnectionProvider {
-  x = AppConstants.variabl1;
+  // x = AppConstants.variabl1;
 
-  private static instConnectionProvider = new ConnectionProvider();
+  private static instConnectionProvider;
 
   private ConnectionProvider() {}
 
   static getInstance() {
+    if (this.instConnectionProvider === null) {
+      this.instConnectionProvider = new ConnectionProvider();
+    }
     this.getInstances(); // aceesing static class inside same class
     return this.instConnectionProvider;
   }
 
   static getInstances() {
+    //other static methods willnot be acccesible inside non static methods
     return this.instConnectionProvider;
   }
   private connectWifi: Connection = new CreateWifiConncetion();
