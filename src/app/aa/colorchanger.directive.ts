@@ -3,12 +3,14 @@ import {
   ElementRef,
   HostBinding,
   HostListener,
+  Input,
 } from '@angular/core';
 
 @Directive({
   selector: '[appColorchanger]',
 })
 export class ColorchangerDirective {
+  @Input() var1 = '';
   // @HostBinding('style.color') color;
   @HostBinding('style.backgroundColor') bgColor;
 
