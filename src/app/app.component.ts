@@ -16,7 +16,7 @@ export class AppComponent {
   ref: HelloComponent;
 
   constructor(private inst: DataSharing) {
-    this.ref.arrayData; //Another way to parant to child component
+    // this.ref.arrayData; //Another way to parant to child component
     this.instService = inst;
     inst.getService().subscribe((data) => {
       console.log('appcomponent - ' + data);
